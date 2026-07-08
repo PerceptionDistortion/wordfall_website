@@ -1,6 +1,6 @@
-/* ===================================================
+/* =====================================================
    RESET
-=================================================== */
+===================================================== */
 
 *{
     margin:0;
@@ -8,8 +8,12 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html,
+body{
+
+    width:100%;
+    height:100%;
+
 }
 
 body{
@@ -20,9 +24,9 @@ body{
 
     background:
     radial-gradient(circle at top left,
-    #243b72 0%,
-    #182746 45%,
-    #0d1628 100%);
+    #29498b 0%,
+    #1a2745 45%,
+    #0c1321 100%);
 
     overflow:hidden;
 
@@ -30,11 +34,11 @@ body{
 
 
 
-/* ===================================================
-   CONTAINER
-=================================================== */
+/* =====================================================
+   PAGE
+===================================================== */
 
-.container{
+.page{
 
     width:min(1500px,95vw);
 
@@ -54,9 +58,9 @@ body{
 
 
 
-/* ===================================================
+/* =====================================================
    HEADER
-=================================================== */
+===================================================== */
 
 header{
 
@@ -66,9 +70,13 @@ header{
 
     align-items:center;
 
+    margin-bottom:15px;
+
 }
 
-.logoArea{
+
+
+.brand{
 
     display:flex;
 
@@ -78,17 +86,21 @@ header{
 
 }
 
+
+
 .logo{
 
-    width:110px;
+    width:105px;
 
     border-radius:14px;
 
 }
 
-.logoArea h2{
 
-    font-size:40px;
+
+.brand h1{
+
+    font-size:34px;
 
     font-weight:700;
 
@@ -96,21 +108,27 @@ header{
 
 }
 
-.logoArea span{
 
-    color:#9eb2d8;
 
-    font-size:18px;
+.brand span{
+
+    color:#a5b7d8;
+
+    font-size:16px;
 
 }
+
+
 
 nav{
 
     display:flex;
 
-    gap:30px;
+    gap:28px;
 
 }
+
+
 
 nav a{
 
@@ -118,41 +136,49 @@ nav a{
 
     text-decoration:none;
 
-    font-weight:600;
+    font-size:16px;
 
-    font-size:17px;
+    font-weight:600;
 
     transition:.25s;
 
 }
 
+
+
 nav a:hover{
 
-    color:#61a8ff;
+    color:#73b4ff;
 
 }
 
 
 
-/* ===================================================
-   HERO
-=================================================== */
+/* =====================================================
+   MAIN
+===================================================== */
 
-.hero{
-
-    display:grid;
-
-    grid-template-columns:52% 48%;
-
-    align-items:center;
-
-    gap:40px;
+.mainLayout{
 
     flex:1;
 
+    display:grid;
+
+    grid-template-columns:42% 58%;
+
+    gap:28px;
+
+    align-items:stretch;
+
 }
 
-.heroLeft{
+
+
+/* =====================================================
+   LEFT PANEL
+===================================================== */
+
+.leftPanel{
 
     display:flex;
 
@@ -162,46 +188,48 @@ nav a:hover{
 
 }
 
-.heroLeft h1{
 
-    font-size:58px;
 
-    font-weight:800;
+.leftPanel h2{
+
+    font-size:52px;
 
     line-height:1.05;
+
+    font-weight:800;
 
     margin-bottom:18px;
 
 }
 
-.heroLeft p{
 
-    font-size:18px;
 
-    color:#d8dce6;
+.leftPanel p{
 
-    line-height:1.55;
+    font-size:17px;
 
-    max-width:700px;
+    line-height:1.6;
 
-    margin-bottom:25px;
+    color:#d6deeb;
+
+    margin-bottom:24px;
 
 }
-/* ===================================================
+/* =====================================================
    BUTTONS
-=================================================== */
+===================================================== */
 
-.buttonRow{
+.buttons{
 
     display:flex;
 
-    gap:18px;
+    gap:16px;
 
-    margin-top:8px;
+    margin-bottom:26px;
 
 }
 
-.playButton,
+.primaryButton,
 .secondaryButton{
 
     display:inline-flex;
@@ -212,33 +240,31 @@ nav a:hover{
 
     text-decoration:none;
 
+    padding:14px 28px;
+
+    border-radius:14px;
+
     font-size:16px;
 
     font-weight:600;
-
-    padding:14px 30px;
-
-    border-radius:14px;
 
     transition:.25s;
 
 }
 
-.playButton{
+.primaryButton{
 
     background:linear-gradient(135deg,#3b82f6,#2563eb);
 
     color:white;
 
-    box-shadow:0 10px 30px rgba(37,99,235,.25);
+    box-shadow:0 10px 30px rgba(37,99,235,.35);
 
 }
 
-.playButton:hover{
+.primaryButton:hover{
 
     transform:translateY(-3px);
-
-    box-shadow:0 14px 35px rgba(37,99,235,.4);
 
 }
 
@@ -246,15 +272,15 @@ nav a:hover{
 
     color:white;
 
-    border:2px solid rgba(255,255,255,.15);
+    border:2px solid rgba(255,255,255,.18);
 
-    background:rgba(255,255,255,.04);
+    background:rgba(255,255,255,.05);
 
 }
 
 .secondaryButton:hover{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.10);
 
     transform:translateY(-3px);
 
@@ -264,41 +290,107 @@ nav a:hover{
 
 
 
-/* ===================================================
-   VIDEO PANEL
-=================================================== */
+/* =====================================================
+   STATS
+===================================================== */
 
-.heroRight{
+.stats{
 
-    display:flex;
+    display:grid;
 
-    justify-content:center;
+    grid-template-columns:repeat(2,1fr);
 
-    align-items:center;
+    gap:14px;
 
 }
 
-.videoPanel{
+.stat{
 
-    width:100%;
+    background:rgba(255,255,255,.06);
 
-    max-width:700px;
+    border:1px solid rgba(255,255,255,.08);
 
-    aspect-ratio:16/9;
+    border-radius:18px;
 
-    border-radius:22px;
+    padding:18px;
 
-    overflow:hidden;
+    backdrop-filter:blur(12px);
+
+    transition:.25s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.09);
+
+}
+
+.number{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#61a7ff;
+
+    margin-bottom:8px;
+
+}
+
+.stat span{
+
+    font-size:15px;
+
+    color:#d7ddea;
+
+}
+
+
+
+
+
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.rightPanel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.videoCard{
 
     background:rgba(255,255,255,.05);
 
     border:1px solid rgba(255,255,255,.08);
 
+    border-radius:24px;
+
+    overflow:hidden;
+
+    aspect-ratio:16/9;
+
     box-shadow:0 20px 45px rgba(0,0,0,.35);
 
 }
 
-.videoPanel iframe{
+.videoCard iframe{
 
     width:100%;
 
@@ -312,98 +404,44 @@ nav a:hover{
 
 
 
-/* ===================================================
-   STATS
-=================================================== */
+/* =====================================================
+   FEATURE GRID CONTAINER
+===================================================== */
 
-.stats{
+.featureGrid{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:16px;
 
-    margin-top:18px;
+    flex:1;
 
 }
-
-.statCard{
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:18px;
-
-    text-align:center;
-
-    padding:18px 10px;
-
-    transition:.25s;
-
-    backdrop-filter:blur(10px);
-
-}
-
-.statCard:hover{
-
-    transform:translateY(-4px);
-
-    background:rgba(255,255,255,.08);
-
-}
-
-.statCard h3{
-
-    font-size:34px;
-
-    color:#63a5ff;
-
-    margin-bottom:8px;
-
-}
-
-.statCard span{
-
-    font-size:15px;
-
-    color:#d6dce8;
-
-    font-weight:500;
-
-}
-/* ===================================================
-   FEATURES
-=================================================== */
-
-.features{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:18px;
-
-    margin-top:20px;
-
-}
+/* =====================================================
+   FEATURE CARDS
+===================================================== */
 
 .featureCard{
 
     background:rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
 
-    border-radius:20px;
+    border-radius:18px;
 
-    padding:22px 18px;
+    padding:18px;
 
-    text-align:center;
+    transition:.25s;
 
     backdrop-filter:blur(12px);
 
-    transition:.25s;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
 
 }
 
@@ -411,25 +449,25 @@ nav a:hover{
 
     transform:translateY(-5px);
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.09);
 
-    box-shadow:0 18px 35px rgba(0,0,0,.25);
-
-}
-
-.emoji{
-
-    font-size:34px;
-
-    margin-bottom:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 
 }
 
-.featureCard h4{
+.icon{
 
-    font-size:20px;
+    font-size:30px;
 
     margin-bottom:10px;
+
+}
+
+.featureCard h3{
+
+    font-size:19px;
+
+    margin-bottom:8px;
 
     font-weight:700;
 
@@ -441,17 +479,15 @@ nav a:hover{
 
     line-height:1.5;
 
-    color:#d6dce8;
+    color:#d8dfe9;
 
 }
 
 
 
-
-
-/* ===================================================
+/* =====================================================
    FOOTER
-=================================================== */
+===================================================== */
 
 footer{
 
@@ -461,13 +497,13 @@ footer{
 
     align-items:center;
 
-    padding:12px 0;
-
     margin-top:18px;
+
+    padding-top:15px;
 
     border-top:1px solid rgba(255,255,255,.08);
 
-    color:#9fb3d7;
+    color:#aab8d3;
 
     font-size:14px;
 
@@ -475,7 +511,7 @@ footer{
 
 footer a{
 
-    color:#69a7ff;
+    color:#72b2ff;
 
     text-decoration:none;
 
@@ -489,11 +525,9 @@ footer a:hover{
 
 
 
-
-
-/* ===================================================
+/* =====================================================
    RESPONSIVE
-=================================================== */
+===================================================== */
 
 @media (max-width:1200px){
 
@@ -503,37 +537,25 @@ footer a:hover{
 
     }
 
-    .container{
+    .page{
 
         height:auto;
 
-        padding:20px 0;
+        padding:25px 0;
 
     }
 
-    .hero{
+    .mainLayout{
 
         grid-template-columns:1fr;
 
-        gap:35px;
+        gap:25px;
 
     }
 
-    .heroRight{
+    .rightPanel{
 
         order:-1;
-
-    }
-
-    .features{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-    .stats{
-
-        grid-template-columns:repeat(2,1fr);
 
     }
 
@@ -542,24 +564,6 @@ footer a:hover{
 
 
 @media (max-width:768px){
-
-    .logo{
-
-        width:80px;
-
-    }
-
-    .logoArea h2{
-
-        font-size:30px;
-
-    }
-
-    .logoArea span{
-
-        font-size:15px;
-
-    }
 
     header{
 
@@ -571,33 +575,49 @@ footer a:hover{
 
     nav{
 
-        gap:18px;
-
         flex-wrap:wrap;
 
         justify-content:center;
 
     }
 
-    .heroLeft h1{
+    .logo{
 
-        font-size:42px;
-
-    }
-
-    .heroLeft p{
-
-        font-size:16px;
+        width:85px;
 
     }
 
-    .buttonRow{
+    .brand h1{
+
+        font-size:28px;
+
+    }
+
+    .brand span{
+
+        font-size:14px;
+
+    }
+
+    .leftPanel h2{
+
+        font-size:38px;
+
+    }
+
+    .leftPanel p{
+
+        font-size:15px;
+
+    }
+
+    .buttons{
 
         flex-direction:column;
 
     }
 
-    .features{
+    .featureGrid{
 
         grid-template-columns:1fr;
 
@@ -605,7 +625,7 @@ footer a:hover{
 
     .stats{
 
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
 
     }
 
@@ -613,7 +633,7 @@ footer a:hover{
 
         flex-direction:column;
 
-        gap:10px;
+        gap:8px;
 
         text-align:center;
 
