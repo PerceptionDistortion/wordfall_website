@@ -9,5 +9,9 @@
 
   "assets": {
     "directory": "."
+  },
+
+  "observability": {
+    "enabled": true
   }
 }
